@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!-- desc version defines the min feature set of the game needed to run the mod -->
+<modDesc descVersion="72">
+
+    <!-- defines the mod author -->
+    <author>GIANTS Software</author>
+
+    <!-- defines the current version-->
+    <version>1.0.0.0</version>
+
+    <!-- defines if mod is supported multiplayer -->
+    <multiplayer supported="true" />
+
+    <!-- defines the mod title shown ingame. multilanguage support using the shortcuts like fr, es, cz, jp, etc -->
+    <title>
+        <en>Sample Mod - Mileage Counter</en>
+    </title>
+
+    <!-- defines the mod description shown ingame. multilanguage support using the shortcuts like fr, es, cz, jp, etc -->
+    <description>
+        <en>A sample mod</en>
+    </description>
+
+    <!-- defines the icon shown ingame (path relative to mod base folder) -->
+    <iconFilename>icon_mileageCounter.png</iconFilename>
+
+    <!--
+        extraSourceFiles are additional lua scripts that are not directly used by the vehicle or placeable specialization system
+        e.g. for network events or non vehicle/placeable scripts
+    -->
+    <extraSourceFiles>
+        <sourceFile filename="scripts/InjectSpecialization.lua"/>
+        <sourceFile filename="scripts/MileageDisplay.lua"/>
+        <sourceFile filename="scripts/MileageHUDExtension.lua"/>
+    </extraSourceFiles>
+
+    <!--
+        placeables are using a specialization system that behaves like a plugin system
+        each specialization is used for a specific placeable feature
+        e.g.
+            'placement' specialization adds functionality to support dynamic placement via construction screen
+            'leveling' specialization adds support to level the area around the placeable
+            etc.
+    -->
+    <specializations>
+        <specialization name="mileageCounter" className="MileageCounter" filename="scripts/MileageCounter.lua" />
+    </specializations>
+
+</modDesc>
